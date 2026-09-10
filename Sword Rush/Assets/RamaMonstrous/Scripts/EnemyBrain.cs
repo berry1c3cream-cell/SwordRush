@@ -9,13 +9,16 @@ public class EnemyBrain : MonoBehaviour
     public Transform[] patrolPoints;
     public Transform player;
 
+    [Header("SOLO PARA PRUEBAS/DEBUG!!!")]
+    public float PlayerHealth = 100;
+
     [Header("Settings")]
     public float patrolSpeed = 2f;
     public float chaseSpeed = 4f;
     public float chaseDistance = 8f;
     public float attackDistance = 1.5f;
     public float attackCooldown = 1f;
-    //public float attackDamage = 1f;
+    public float attackDamage = 1f;
 
     // Estos son solo para debugging y development
     [Header("State Materials")]
@@ -100,7 +103,9 @@ public class EnemyBrain : MonoBehaviour
 
         if (attackTimer <= 0f)
         {
-            Debug.Log("Enemy attacked the player!");
+            Debug.Log("El enemigo atacó!");
+            PlayerHealth -= attackDamage;
+            Debug.Log($"El jugador tiene: {PlayerHealth} de vida!");
             attackTimer = attackCooldown;
         }
     }
