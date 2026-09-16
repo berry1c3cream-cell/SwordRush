@@ -199,7 +199,7 @@ MonoBehaviour:
   chaseDistance: 2.94
   attackDistance: 1.21
   attackCooldown: 1
-  attackDamage: 1
+  attackDamage: 2
 --- !u!114 &5869031535253601963
 MonoBehaviour:
   m_ObjectHideFlags: 0
