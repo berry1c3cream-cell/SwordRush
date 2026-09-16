@@ -5,7 +5,10 @@ public class PEspada : MonoBehaviour
     public int daño = 1;
     public float distanciaAtaque = 3f;
     public float velocidadAtaque = 10f;
+
     public Camera camara;
+
+    private PHabilidades habilidades;
 
     private Vector3 posicionInicial;
     private Quaternion rotacionInicial;
@@ -22,6 +25,13 @@ public class PEspada : MonoBehaviour
         if (camara == null)
         {
             camara = Camera.main;
+        }
+
+        habilidades = GetComponentInParent<PHabilidades>();
+
+        if (habilidades == null)
+        {
+            Debug.LogError("No se encontró Habilidades en el Player.");
         }
     }
 
@@ -48,12 +58,21 @@ public class PEspada : MonoBehaviour
     {
         Quaternion rotacionAtaque = Quaternion.Euler(80f, 0f, 0f);
 
+        float velocidadActual = velocidadAtaque;
+
+        // Habilidad F: ataque más rápido
+        if (habilidades != null && habilidades.habilidadFActiva)
+        {
+            velocidadActual = velocidadAtaque * 4f;
+        }
+
         transform.localRotation = Quaternion.Lerp(
             transform.localRotation,
             rotacionAtaque,
-            velocidadAtaque * Time.deltaTime
+            velocidadActual * Time.deltaTime
         );
 
+        // Detectar enemigo una sola vez
         if (!yaGolpeo)
         {
             DetectarEnemigo();
@@ -82,10 +101,20 @@ public class PEspada : MonoBehaviour
 
             if (vida != null)
             {
-                vida.RecibirDaño(daño);
+                int dañoActual = daño;
+
+                // Habilidad G: 3 de daño
+                if (habilidades != null && habilidades.habilidadGActiva)
+                {
+                    dañoActual = 4;
+                }
+
+                vida.RecibirDaño(dañoActual);
+
                 yaGolpeo = true;
 
                 Debug.Log("¡Espada golpeó al enemigo!");
+                Debug.Log("Daño realizado: " + dañoActual);
             }
         }
         else
