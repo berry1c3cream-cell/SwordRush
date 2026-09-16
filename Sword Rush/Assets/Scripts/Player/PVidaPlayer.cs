@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PVidaPlayer : MonoBehaviour
 {
-    public int vida = 3;
+    public int vida = 100;
 
     private bool muerto = false;
 
