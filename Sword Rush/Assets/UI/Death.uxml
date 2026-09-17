@@ -1,0 +1,11 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:VisualElement name="DeathScreen" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0.859);">
+        <ui:VisualElement style="flex-grow: 1; width: 1084px; justify-content: flex-start; align-self: center; padding-top: 146px; padding-bottom: 49px; align-items: center;">
+            <ui:VisualElement style="flex-grow: 1; width: 1076px; align-self: center; height: auto; align-items: center; align-content: center; max-height: 23%; margin-bottom: 54px; background-image: url(&quot;project://database/Assets/UI/Imagenes/muerte.png?fileID=177569744&amp;guid=c8ce45a78d6ef4c4cad897f0f37a8b76&amp;type=3#muerte_0&quot;); -unity-background-scale-mode: scale-to-fit;"/>
+            <ui:VisualElement style="flex-grow: 1; width: 551px; align-self: center; height: auto; max-height: 559px; align-content: flex-end; align-items: stretch; padding-top: 56px; flex-wrap: nowrap; justify-content: space-around;">
+                <ui:Button text="" name="ReiniciarButton" style="background-image: url(&quot;project://database/Assets/UI/Imagenes/2.png?fileID=-2019380757&amp;guid=b7bcb6b291f459047a9db561c0daffaa&amp;type=3#2_0&quot;); height: 149px; background-color: rgba(188, 188, 188, 0); -unity-background-scale-mode: scale-to-fit; border-left-color: rgba(149, 149, 149, 0); border-right-color: rgba(149, 149, 149, 0); border-top-color: rgba(149, 149, 149, 0); border-bottom-color: rgba(149, 149, 149, 0);"/>
+                <ui:Button text="" name="SalirButton" style="background-image: url(&quot;project://database/Assets/UI/Imagenes/6.png?fileID=-1924060042&amp;guid=8fd34dd9b5c95f944821ed60d2bc82cc&amp;type=3#6_0&quot;); height: 149px; background-color: rgba(188, 188, 188, 0); -unity-background-scale-mode: scale-to-fit; border-left-color: rgba(149, 149, 149, 0); border-right-color: rgba(149, 149, 149, 0); border-top-color: rgba(149, 149, 149, 0); border-bottom-color: rgba(149, 149, 149, 0);"/>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

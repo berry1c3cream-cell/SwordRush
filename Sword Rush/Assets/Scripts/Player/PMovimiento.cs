@@ -12,16 +12,22 @@ public class PMovimiento : MonoBehaviour
     private float rotacionX = 0f;
     private float velocidadVertical = 0f;
 
+    private bool juegoIniciado = false;
+
     void Start()
     {
         jugador = GetComponent<CharacterController>();
 
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        // Cursor visible mientras está el menú
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     void Update()
     {
+        if (!juegoIniciado)
+            return;
+
         // Movimiento
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
@@ -53,5 +59,13 @@ public class PMovimiento : MonoBehaviour
         Vector3 gravedadMovimiento = Vector3.up * velocidadVertical;
 
         jugador.Move(gravedadMovimiento * Time.deltaTime);
+    }
+
+    public void IniciarJuego()
+    {
+        juegoIniciado = true;
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 }

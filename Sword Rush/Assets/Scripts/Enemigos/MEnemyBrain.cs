@@ -100,7 +100,9 @@ public class MEnemyBrain : MonoBehaviour
     {
         //rend.material = attackMaterial;
 
-        transform.LookAt(player);
+        Vector3 lookPosition = new Vector3(player.position.x,transform.position.y,player.position.z);
+
+        transform.LookAt(lookPosition);
         float dist = Vector3.Distance(transform.position, player.position);
 
         if (dist > attackDistance)
@@ -125,9 +127,16 @@ public class MEnemyBrain : MonoBehaviour
     // -------- MOVEMENT -------- //
     void MoveTowards(Vector3 target, float speed)
     {
-        Vector3 dir = (target - transform.position).normalized;
+        Vector3 targetPosition = new Vector3(
+            target.x,
+            transform.position.y,
+            target.z
+        );
+
+        Vector3 dir = (targetPosition - transform.position).normalized;
+
         transform.position += dir * speed * Time.deltaTime;
-        transform.LookAt(target);
+        transform.LookAt(targetPosition);
     }
 
     // -------- GIZMOS -------- //

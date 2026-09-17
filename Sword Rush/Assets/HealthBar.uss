@@ -1,0 +1,33 @@
+:root {
+}
+
+.health-bar {
+    width: 500px;
+    height: 100px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.health-bar .unity-progress-bar__background {
+    background-color: rgb(55, 55, 55);
+    border-top-left-radius: 27px;
+    border-top-right-radius: 27px;
+    border-bottom-left-radius: 27px;
+    border-bottom-right-radius: 27px;
+    border-width: 3px;
+    border-color: rgb(30, 30, 30);
+}
+
+.health-bar .unity-progress-bar__progress {
+    background-color: rgb(100, 180, 100);
+    border-top-left-radius: 27px;
+    border-top-right-radius: 27px;
+    border-bottom-left-radius: 27px;
+    border-bottom-right-radius: 27px;
+}
+
+.health-bar .unity-progress-bar__title {
+    color: rgb(255, 255, 255);
+    -unity-font-style: bold;
+    font-size: 22px;
+}

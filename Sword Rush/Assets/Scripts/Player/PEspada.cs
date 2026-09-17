@@ -17,6 +17,8 @@ public class PEspada : MonoBehaviour
     private bool regresando = false;
     private bool yaGolpeo = false;
 
+    private bool juegoIniciado = false;
+
     void Start()
     {
         posicionInicial = transform.localPosition;
@@ -37,6 +39,9 @@ public class PEspada : MonoBehaviour
 
     void Update()
     {
+        if (!juegoIniciado)
+            return;
+
         if (Input.GetMouseButtonDown(0) && !atacando && !regresando)
         {
             atacando = true;
@@ -144,5 +149,10 @@ public class PEspada : MonoBehaviour
 
             regresando = false;
         }
+    }
+
+    public void IniciarJuego()
+    {
+        juegoIniciado = true;
     }
 }

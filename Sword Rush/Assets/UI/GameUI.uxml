@@ -1,0 +1,9 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/MisEstilos.uss?fileID=7433441132597879392&amp;guid=9c73f625d7b1a3d42b4a5bdf278d59bf&amp;type=3#MisEstilos"/>
+    <Style src="project://database/Assets/HealthBar.uss?fileID=7433441132597879392&amp;guid=b36bdf84bf5d4824c946954030b569d7&amp;type=3#HealthBar"/>
+    <ui:VisualElement name="BarraVida" style="flex-grow: 1;">
+        <ui:VisualElement name="BarraVidaVessel" style="flex-grow: 1; max-height: 191px; width: 970px; align-self: flex-start; padding-top: 55px; -unity-text-align: upper-left; margin-left: 49px;">
+            <ui:ProgressBar value="100" title="" name="HealthBar" class="health-bar" style="-unity-background-scale-mode: stretch-to-fill; height: 183px; -unity-text-auto-size: none; width: 958px; overflow: visible; justify-content: flex-start; min-height: 182px; border-left-color: rgba(0, 0, 0, 0); border-right-color: rgba(0, 0, 0, 0); border-top-color: rgba(0, 0, 0, 0); border-bottom-color: rgba(0, 0, 0, 0); background-position-y: bottom 0;"/>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
