@@ -8,6 +8,7 @@ public class MEnemyBrain : MonoBehaviour
     [Header("References")]
     public Transform[] patrolPoints;
     public Transform player;
+    private PVidaPlayer vidaPlayer;
 
     [Header("SOLO PARA PRUEBAS/DEBUG!!!")]
     public float PlayerHealth = 100;
@@ -21,19 +22,26 @@ public class MEnemyBrain : MonoBehaviour
     public float attackDamage = 1f;
 
     // Estos son solo para debugging y development
-    [Header("State Materials")]
-    public Material patrolMaterial;
-    public Material chaseMaterial;
-    public Material attackMaterial;
-    private Renderer rend;
+    //[Header("State Materials")]
+    //public Material patrolMaterial;
+    //public Material chaseMaterial;
+    //public Material attackMaterial;
+    //private Renderer rend;
 
     private int patrolIndex = 0;
     private float attackTimer = 0f;
 
     void Start()
     {
-        rend = GetComponent<Renderer>();
-        rend.material = patrolMaterial;
+        //rend = GetComponent<Renderer>();
+        //rend.material = patrolMaterial;
+
+        vidaPlayer = player.GetComponent<PVidaPlayer>();
+
+        if (vidaPlayer == null)
+        {
+            Debug.LogError("El Player no tiene PVidaPlayer.");
+        }
     }
 
     void Update()
@@ -59,7 +67,7 @@ public class MEnemyBrain : MonoBehaviour
     // -------- PATROL -------- //
     void Patrol()
     {
-        rend.material = patrolMaterial;
+        //rend.material = patrolMaterial;
 
         Transform point = patrolPoints[patrolIndex];
         MoveTowards(point.position, patrolSpeed);
@@ -74,7 +82,7 @@ public class MEnemyBrain : MonoBehaviour
     // -------- CHASE -------- //
     void Chase()
     {
-        rend.material = chaseMaterial;
+        //rend.material = chaseMaterial;
 
         MoveTowards(player.position, chaseSpeed);
 
@@ -90,9 +98,11 @@ public class MEnemyBrain : MonoBehaviour
     // -------- ATTACK -------- //
     void Attack()
     {
-        rend.material = attackMaterial;
+        //rend.material = attackMaterial;
 
-        transform.LookAt(player);
+        Vector3 lookPosition = new Vector3(player.position.x,transform.position.y,player.position.z);
+
+        transform.LookAt(lookPosition);
         float dist = Vector3.Distance(transform.position, player.position);
 
         if (dist > attackDistance)
@@ -104,8 +114,12 @@ public class MEnemyBrain : MonoBehaviour
         if (attackTimer <= 0f)
         {
             Debug.Log("El enemigo atacó!");
-            PlayerHealth -= attackDamage;
-            Debug.Log($"El jugador tiene: {PlayerHealth} de vida!");
+
+            if (vidaPlayer != null)
+            {
+                vidaPlayer.RecibirDaño((int)attackDamage);
+            }
+
             attackTimer = attackCooldown;
         }
     }
@@ -113,9 +127,16 @@ public class MEnemyBrain : MonoBehaviour
     // -------- MOVEMENT -------- //
     void MoveTowards(Vector3 target, float speed)
     {
-        Vector3 dir = (target - transform.position).normalized;
+        Vector3 targetPosition = new Vector3(
+            target.x,
+            transform.position.y,
+            target.z
+        );
+
+        Vector3 dir = (targetPosition - transform.position).normalized;
+
         transform.position += dir * speed * Time.deltaTime;
-        transform.LookAt(target);
+        transform.LookAt(targetPosition);
     }
 
     // -------- GIZMOS -------- //
