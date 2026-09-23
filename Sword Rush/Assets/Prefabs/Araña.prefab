@@ -1,76 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1255530040024521970
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7100607680302218150}
-  - component: {fileID: 1949539068344841455}
-  - component: {fileID: 4454372669546611650}
-  m_Layer: 0
-  m_Name: pivote
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7100607680302218150
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1255530040024521970}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.7226093, z: -0, w: 0.69125676}
-  m_LocalPosition: {x: -1.84, y: 1.198, z: -1.5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 4298212294063799317}
-  m_Father: {fileID: 6824193283497824383}
-  m_LocalEulerAnglesHint: {x: 0, y: 92.541, z: 0}
---- !u!114 &1949539068344841455
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1255530040024521970}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b11e8c9c3142aa34aa445c2ce9a0853b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MEnemyBrain
-  currentState: 0
-  patrolPoints:
-  - {fileID: 4532057280155796740}
-  - {fileID: 4452905792937411681}
-  player: {fileID: 0}
-  PlayerHealth: 100
-  patrolSpeed: 2
-  chaseSpeed: 3
-  chaseDistance: 2.94
-  attackDistance: 1.21
-  attackCooldown: 1
-  attackDamage: 2
---- !u!114 &4454372669546611650
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1255530040024521970}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1426ebf8aaab9cb499a9784c0de3abf1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PVidaEnemigo
-  vida: 4
 --- !u!1 &2140853376716928243
 GameObject:
   m_ObjectHideFlags: 0
@@ -164,7 +93,7 @@ Transform:
   m_Children:
   - {fileID: 4532057280155796740}
   - {fileID: 4452905792937411681}
-  - {fileID: 7100607680302218150}
+  - {fileID: 4298212294063799317}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &4336095849179175934
@@ -173,11 +102,11 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 7100607680302218150}
+    m_TransformParent: {fileID: 6824193283497824383}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 9074d5cadcfde624caca3c59b3646df0, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.33595645
+      value: 0.33595657
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9074d5cadcfde624caca3c59b3646df0, type: 3}
       propertyPath: m_LocalScale.y
@@ -185,23 +114,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9074d5cadcfde624caca3c59b3646df0, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.33595645
+      value: 0.33595657
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9074d5cadcfde624caca3c59b3646df0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.95131266
+      value: -1.8287061
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9074d5cadcfde624caca3c59b3646df0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.036000013
+      value: 1.162
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9074d5cadcfde624caca3c59b3646df0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.07151842
+      value: -0.54712677
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9074d5cadcfde624caca3c59b3646df0, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.69125676
+      value: 0.99862504
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9074d5cadcfde624caca3c59b3646df0, type: 3}
       propertyPath: m_LocalRotation.x
@@ -209,7 +138,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9074d5cadcfde624caca3c59b3646df0, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.7226093
+      value: 0.052422903
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9074d5cadcfde624caca3c59b3646df0, type: 3}
       propertyPath: m_LocalRotation.z
@@ -221,7 +150,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9074d5cadcfde624caca3c59b3646df0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -86.531
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9074d5cadcfde624caca3c59b3646df0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -238,6 +167,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9074d5cadcfde624caca3c59b3646df0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 232345437630111142}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9074d5cadcfde624caca3c59b3646df0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 893017897371245582}
   m_SourcePrefab: {fileID: 100100000, guid: 9074d5cadcfde624caca3c59b3646df0, type: 3}
 --- !u!1 &3525616892680332975 stripped
 GameObject:
@@ -265,6 +197,30 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 3.637728
   m_Center: {x: 0.000000016291045, y: -1.2709473, z: -1.137585}
+--- !u!114 &893017897371245582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3525616892680332975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b11e8c9c3142aa34aa445c2ce9a0853b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MEnemyBrain
+  currentState: 0
+  patrolPoints:
+  - {fileID: 4532057280155796740}
+  - {fileID: 4452905792937411681}
+  player: {fileID: 0}
+  PlayerHealth: 100
+  patrolSpeed: 2
+  chaseSpeed: 3
+  chaseDistance: 2.94
+  attackDistance: 1.21
+  attackCooldown: 1
+  attackDamage: 2
 --- !u!4 &4298212294063799317 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9074d5cadcfde624caca3c59b3646df0, type: 3}

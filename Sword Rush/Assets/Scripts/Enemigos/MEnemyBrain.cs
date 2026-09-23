@@ -98,11 +98,20 @@ public class MEnemyBrain : MonoBehaviour
     // -------- ATTACK -------- //
     void Attack()
     {
-        //rend.material = attackMaterial;
+        Vector3 lookPosition = new Vector3(
+            player.position.x,
+            transform.position.y,
+            player.position.z
+        );
 
-        Vector3 lookPosition = new Vector3(player.position.x,transform.position.y,player.position.z);
+        Vector3 direction = lookPosition - transform.position;
 
-        transform.LookAt(lookPosition);
+        if (direction != Vector3.zero)
+        {
+            transform.rotation = Quaternion.LookRotation(direction)
+                                 * Quaternion.Euler(0, 180, 0);
+        }
+
         float dist = Vector3.Distance(transform.position, player.position);
 
         if (dist > attackDistance)
@@ -124,6 +133,34 @@ public class MEnemyBrain : MonoBehaviour
         }
     }
 
+    //void Attack()
+    //{
+    //    //rend.material = attackMaterial;
+
+    //    Vector3 lookPosition = new Vector3(player.position.x,transform.position.y,player.position.z);
+
+    //    transform.LookAt(lookPosition);
+    //    float dist = Vector3.Distance(transform.position, player.position);
+
+    //    if (dist > attackDistance)
+    //    {
+    //        currentState = State.Chase;
+    //        return;
+    //    }
+
+    //    if (attackTimer <= 0f)
+    //    {
+    //        Debug.Log("El enemigo atacó!");
+
+    //        if (vidaPlayer != null)
+    //        {
+    //            vidaPlayer.RecibirDaño((int)attackDamage);
+    //        }
+
+    //        attackTimer = attackCooldown;
+    //    }
+    //}
+
     // -------- MOVEMENT -------- //
     void MoveTowards(Vector3 target, float speed)
     {
@@ -136,8 +173,26 @@ public class MEnemyBrain : MonoBehaviour
         Vector3 dir = (targetPosition - transform.position).normalized;
 
         transform.position += dir * speed * Time.deltaTime;
-        transform.LookAt(targetPosition);
+
+        if (dir != Vector3.zero)
+        {
+            transform.rotation = Quaternion.LookRotation(dir) * Quaternion.Euler(0, 180, 0);
+        }
     }
+
+    //void MoveTowards(Vector3 target, float speed)
+    //{
+    //    Vector3 targetPosition = new Vector3(
+    //        target.x,
+    //        transform.position.y,
+    //        target.z
+    //    );
+
+    //    Vector3 dir = (targetPosition - transform.position).normalized;
+
+    //    transform.position += dir * speed * Time.deltaTime;
+    //    transform.LookAt(targetPosition);
+    //}
 
     // -------- GIZMOS -------- //
     void OnDrawGizmosSelected()
