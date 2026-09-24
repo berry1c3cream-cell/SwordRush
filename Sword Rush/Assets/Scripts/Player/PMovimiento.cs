@@ -28,6 +28,9 @@ public class PMovimiento : MonoBehaviour
         if (!juegoIniciado)
             return;
 
+        if (Time.timeScale == 0f)
+            return;
+
         // Movimiento
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");

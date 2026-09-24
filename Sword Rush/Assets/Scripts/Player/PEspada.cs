@@ -42,6 +42,9 @@ public class PEspada : MonoBehaviour
         if (!juegoIniciado)
             return;
 
+        if (Time.timeScale == 0f)
+            return;
+
         if (Input.GetMouseButtonDown(0) && !atacando && !regresando)
         {
             atacando = true;

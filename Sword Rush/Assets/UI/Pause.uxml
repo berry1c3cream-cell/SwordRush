@@ -1,0 +1,9 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0.745);">
+        <ui:VisualElement style="flex-grow: 1; background-color: rgba(255, 0, 0, 0); max-height: 362px; background-image: url(&quot;project://database/Assets/UI/Imagenes/pausa.png?fileID=2800000&amp;guid=ce6595608b36de64e963bc64c0bc678e&amp;type=3#pausa&quot;); -unity-background-scale-mode: scale-and-crop; padding-top: -40px; margin-top: 40px;"/>
+        <ui:VisualElement style="flex-grow: 1; align-items: center; justify-content: center; align-self: center; width: 516px;">
+            <ui:Button text="" name="continuarBotton" class="button" style="background-image: url(&quot;project://database/Assets/UI/Imagenes/3.png?fileID=380278712&amp;guid=f638c4d373dd7e5479c2e41869bbfd95&amp;type=3#3_0&quot;); -unity-background-scale-mode: scale-to-fit; background-color: rgba(188, 188, 188, 0); border-left-color: rgba(149, 149, 149, 0); border-right-color: rgba(149, 149, 149, 0); border-top-color: rgba(149, 149, 149, 0); border-bottom-color: rgba(149, 149, 149, 0); width: 341px; height: 117px; -unity-slice-type: sliced; margin-bottom: 7px; top: -114px;"/>
+            <ui:Button text="" name="LeaveButton" style="width: 344px; height: 101px; background-color: rgba(188, 188, 188, 0); background-image: url(&quot;project://database/Assets/UI/Imagenes/2.png?fileID=-2019380757&amp;guid=b7bcb6b291f459047a9db561c0daffaa&amp;type=3#2_0&quot;); -unity-background-scale-mode: scale-to-fit; top: -55px; border-left-color: rgba(149, 149, 149, 0); border-right-color: rgba(149, 149, 149, 0); border-top-color: rgba(149, 149, 149, 0); border-bottom-color: rgba(149, 149, 149, 0);"/>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
